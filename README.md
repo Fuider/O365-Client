@@ -1,5 +1,6 @@
-# O365-Mail-Manager
-用Python编写的代码示例，与O365连接并查阅邮件，查看日历等。
+# O365-Client
+原OMM(O365-Mail-Manager)项目
+用Python编写的代码示例，与O365连接并查阅邮件，查看日历等。我们的梦想是尽可能多的集成API。
 
 **欢迎Pull requests和Issues!**
 
@@ -71,6 +72,7 @@ https://blog.curlc.com/archives/66.html
 
 ## 更新日志
 ### 2020.7.24
+
 我的开源项目O365 Mail Manager终于完工了，大家有兴趣的快去看看吧。
 本次更新内容:
 1. 使用公共客户端流auth_flow_type=='public'
@@ -81,3 +83,8 @@ https://blog.curlc.com/archives/66.html
 4. 优化部分代码，使其符合类编程风格。(还没优化完全部)
 
 喜欢的可以给个star或与我合作，谢谢你们给了我动力！
+
+### 7.26
+
+更新内容:
+拉取至Dreams-builder/O365-Client
