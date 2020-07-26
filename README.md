@@ -1,4 +1,6 @@
 # O365-Client
+
+本程序真实维护人,主要人员:Micraow
 原OMM(O365-Mail-Manager)项目
 用Python编写的代码示例，与O365连接并查阅邮件，查看日历等。我们的梦想是尽可能多的集成API。
 
