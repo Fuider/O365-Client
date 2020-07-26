@@ -1,7 +1,10 @@
 # O365-Client
 
 本程序真实维护人,主要人员:Micraow
+
+在为本项目做出贡献前，请仔细阅读python-o365 项目的文档，及全部代码  [传送门](https://github.com/O365/python-o365)
 原OMM(O365-Mail-Manager)项目
+
 用Python编写的代码示例，与O365连接并查阅邮件，查看日历等。我们的梦想是尽可能多的集成API。
 
 **欢迎Pull requests和Issues!**
@@ -27,8 +30,6 @@
 ![](https://share.pengbo.workers.dev/1595596248544.jpg)
 
 3. 然后它会要你填些信息，随便填一填就好了。
-![](https://f10.baidu.com/it/u=1766511153,3458843539&fm=173&app=49&f=JPEG?w=640&h=648&s=0EC2E812DBDE52CC18EDE1DB02005033&access=215967316)
-![不一定要与我一样。](https://f10.baidu.com/it/u=2158835976,2506634924&fm=173&app=49&f=JPEG?w=640&h=384&s=0530EC331103514B1C54D1CB0000C0B2&access=215967316)
 
 4. 然后它会提示你没有订阅，按左边的加号新建一个，这过程因为要通过谷歌的验证码进行验证，所以需要科学上网，准备好工具。
 
