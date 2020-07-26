@@ -3,7 +3,8 @@
 本程序真实维护人,主要人员:Micraow
 
 在为本项目做出贡献前，请仔细阅读python-o365 项目的文档，及全部代码  [传送门](https://github.com/O365/python-o365)
-原OMM(O365-Mail-Manager)项目
+
+此项目(O365-Client)为原OMM(O365-Mail-Manager)项目
 
 用Python编写的代码示例，与O365连接并查阅邮件，查看日历等。我们的梦想是尽可能多的集成API。
 
