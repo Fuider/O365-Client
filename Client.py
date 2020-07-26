@@ -73,9 +73,6 @@ class mailbox_actions:
 
         os.system("pause")
 
-    def send_email(self):
-        email_will_send=mailbox.ne
-
 
 class Start:
     """这里是应用入口"""
