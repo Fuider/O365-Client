@@ -48,6 +48,10 @@ https://blog.curlc.com/archives/599.html
 具体如何更改onedrive的容量，请看这篇文章。
 https://blog.curlc.com/archives/66.html
 
+## 面向用户的使用方法
+
+运行Client.py
+
 ## 优点
 1. 简洁，体积小
 2. 后台自动刷新token，无需烦恼
@@ -97,3 +101,4 @@ https://blog.curlc.com/archives/66.html
 
 有了最基础的发件功能。
 xiaocao162020加入！
+支持多收件人，感谢 @xiaocao162020
