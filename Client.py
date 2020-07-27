@@ -30,6 +30,7 @@ class Start:
         pass
 
     def mail_or_calendar(self):
+        mailbox_actions().check_if_authenticated()
         self.choice = input('进入邮箱还是日历？(E/C)')
         if self.choice == 'E':
             self.choice = input('看邮件还是写邮件？(R/W)')
