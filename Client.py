@@ -2,21 +2,21 @@
 from O365 import Account
 import os
 
-#O365-Client -- A client to connect O365
-#Copyright (C) 2020  Micraow
+# O365-Client -- A client to connect O365
+# Copyright (C) 2020  Micraow
 
-#This program is free software: you can redistribute it and/or modify
-#it under the terms of the GNU General Public License as published by
-#the Free Software Foundation, either version 3 of the License, or
-#(at your option) any later version.
+# This program is free software: you can redistribute it and/or modify
+# it under the terms of the GNU General Public License as published by
+# the Free Software Foundation, either version 3 of the License, or
+# (at your option) any later version.
 
-#This program is distributed in the hope that it will be useful,
-#but WITHOUT ANY WARRANTY; without even the implied warranty of
-#MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the
-#GNU General Public License for more details.
+# This program is distributed in the hope that it will be useful,
+# but WITHOUT ANY WARRANTY; without even the implied warranty of
+# MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the
+# GNU General Public License for more details.
 
-#You should have received a copy of the GNU General Public License
-#along with this program.  If not, see <https://www.gnu.org/licenses/>.
+# You should have received a copy of the GNU General Public License
+# along with this program.  If not, see <https://www.gnu.org/licenses/>.
 
 credentials = ('74424fcf-55d7-4e15-99d7-1663c0ba2e94',)
 account = Account(credentials, auth_flow_type='public')
@@ -25,15 +25,16 @@ account = Account(credentials, auth_flow_type='public')
 class mailbox_actions:
     """用来对邮箱进行操作"""
 
-    def __init__(self, choice=None):
+    def __init__(self, choice=None, to_who=None, subj=None, text=None):
 
-        # 这是我的应用ID和机密，但是公共客户端流还是没有实现，文档里说下面改为
-        # self.account = Account(self.credentials, auth_flow_type=‘pubic')
-        # （上面是我的理解）就行了但他报错
+        # 已实现公共客户端流
         self.account = account
         self.credentials = credentials
         self.choice = choice
         self.scopes = ['basic', 'message_all']  # 请求权限
+        self.to_who = to_who
+        self.subj = subj
+        self.text = text
 
     def check_if_authenticated(self):
         """检查是否有用户登录，若无，则请求登录"""
@@ -56,7 +57,7 @@ class mailbox_actions:
         2.已发送
         3.垃圾邮件
         4.已删除\n
-        ''') # 选择进入哪个文件夹
+        ''')  # 选择进入哪个文件夹
         readbox = input('请输入对应数字')
 
         if readbox == '1':
@@ -67,15 +68,37 @@ class mailbox_actions:
             readbox = mailbox.junk_folder()
         else:
             readbox = mailbox.deleted_folder()
-
-        for messages in readbox.get_messages(limit=2000, batch=100):  # 下面的都是utils分页的
+        for messages in readbox.get_messages(limit=150, batch=2000):
             print(messages)
+        os.system('pause')
 
-        os.system("pause")
+
+    def send_email(self):
+        self.to_who = []
+        new_people = input('\n收件人是谁？\n')
+        self.to_who.append(new_people)
+        self.subj = input('\n主题是什么？\n')
+        self.text = input('\n 正文是什么？\n')
+        m = account.new_message()
+        m.to.add(self.to_who)
+        m.subject = self.subj
+        m.body = self.text
+        m.send()
+        print('\n邮件已发送\n')
+        os.system('pause')
+
+    def get_full_send_info(self):
+        self.to_who = []
+        new_people = input('\n收件人是谁？\n')
+        self.to_who.append(new_people)
+        self.subj = input('\n主题是什么？\n')
+        self.text = input('\n 正文是什么？\n')
+
 
 
 class Start:
     """这里是应用入口"""
+
     def __init__(self):
         pass
 
@@ -86,8 +109,7 @@ class Start:
             if self.choice == 'R':
                 mailbox_actions().read_email()
             elif self.choice == 'W':
-                print('开发中，请稍后')
-                os.system("pause")
+                mailbox_actions().send_email()
             else:
                 Start().mail_or_calendar()
         elif self.choice == 'C':
