@@ -21,19 +21,15 @@ credentials = ('74424fcf-55d7-4e15-99d7-1663c0ba2e94',)
 account = Account(credentials, auth_flow_type='public')
 
 
-class mailbox_actions:
+class MailboxActions:
     """用来对邮箱进行操作"""
 
-    def __init__(self, choice=None, to_who=None, subj=None, text=None):
+    def __init__(self):
 
         # 已实现公共客户端流
         self.account = account
         self.credentials = credentials
-        self.choice = choice
         self.scopes = ['basic', 'message_all']  # 请求权限
-        self.to_who = to_who
-        self.subj = subj
-        self.text = text
 
     def check_if_authenticated(self):
         """检查是否有用户登录，若无，则请求登录"""
@@ -72,25 +68,26 @@ class mailbox_actions:
         os.system('pause')
 
     def send_email(self):
+        global to_who
+        global subj
+        global text
+        m = account.new_message()
+        m.to.add(to_who)
+        m.subject = subj
+        m.body = text
+        m.send()
+        print('\n邮件已发送\n')
+        os.system('pause')
+
+    def get_full_mail_info(self):
+        global to_who
+        global subj
+        global text
         new_people = input('\n收件人是谁？如有多个，每个都以;结尾，最后一个除外。\n')
         result1 = re.split(r'[;]', new_people)  # 匹配正则式，感谢@xiaocao162020
         print('请确认这些收件人。')
         print(result1)
         os.system('pause')
-        self.to_who = result1
-        self.subj = input('\n主题是什么？\n')
-        self.text = input('\n 正文是什么？\n')
-        m = account.new_message()
-        m.to.add(self.to_who)
-        m.subject = self.subj
-        m.body = self.text
-        m.send()
-        print('\n邮件已发送\n')
-        os.system('pause')
-
-    def get_full_send_info(self):
-        self.to_who = []
-        new_people = input('\n收件人是谁？\n')
-        self.to_who.append(new_people)
-        self.subj = input('\n主题是什么？\n')
-        self.text = input('\n 正文是什么？\n')
+        to_who = result1
+        subj = input('\n主题是什么？\n')
+        text = input('\n 正文是什么？\n')
