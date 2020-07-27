@@ -92,3 +92,8 @@ https://blog.curlc.com/archives/66.html
 
 更新内容:
 拉取至Dreams-builder/O365-Client
+
+### 7.27
+
+有了最基础的发件功能。
+xiaocao162020加入！
