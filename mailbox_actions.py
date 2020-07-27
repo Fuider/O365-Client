@@ -1,5 +1,7 @@
 from O365 import Account
 import os
+import re
+
 # O365-Client -- A client to connect O365
 # Copyright (C) 2020  Micraow
 
@@ -17,6 +19,8 @@ import os
 # along with this program.  If not, see <https://www.gnu.org/licenses/>.
 credentials = ('74424fcf-55d7-4e15-99d7-1663c0ba2e94',)
 account = Account(credentials, auth_flow_type='public')
+
+
 class mailbox_actions:
     """用来对邮箱进行操作"""
 
@@ -67,11 +71,13 @@ class mailbox_actions:
             print(messages)
         os.system('pause')
 
-
     def send_email(self):
-        self.to_who = []
-        new_people = input('\n收件人是谁？\n')
-        self.to_who.append(new_people)
+        new_people = input('\n收件人是谁？如有多个，每个都以;结尾，最后一个除外。\n')
+        result1 = re.split(r'[;]', new_people)
+        print('请确认这些收件人。')
+        print(result1)
+        os.system('pause')
+        self.to_who = result1
         self.subj = input('\n主题是什么？\n')
         self.text = input('\n 正文是什么？\n')
         m = account.new_message()
