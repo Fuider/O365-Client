@@ -73,7 +73,7 @@ class mailbox_actions:
 
     def send_email(self):
         new_people = input('\n收件人是谁？如有多个，每个都以;结尾，最后一个除外。\n')
-        result1 = re.split(r'[;]', new_people)
+        result1 = re.split(r'[;]', new_people)  # 匹配正则式，感谢@xiaocao162020
         print('请确认这些收件人。')
         print(result1)
         os.system('pause')
