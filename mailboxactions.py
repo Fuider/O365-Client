@@ -27,13 +27,13 @@
 #  You should have received a copy of the GNU General Public License
 #  along with this program.  If not, see <https://www.gnu.org/licenses/>.
 
-
-from O365 import Account, message
+from O365 import Account, message, MSGraphProtocol
 import os
 import re
 
 credentials = ('74424fcf-55d7-4e15-99d7-1663c0ba2e94',)
-account = Account(credentials, auth_flow_type='public')
+protocol = MSGraphProtocol(api_version='v1.0')
+account = Account(credentials, auth_flow_type='public', protocol=protocol)
 
 
 class MailboxActions:
@@ -72,7 +72,7 @@ class MailboxActions:
 
         if readbox == '1':
             readbox = mailbox.inbox_folder()
-            message.Message(protocol='MSGraphProtocol',main_resource='me', download_attachments=False)
+            message.Message(protocol='MSGraphProtocol', main_resource='me', download_attachments=False)
         elif readbox == '2':
             readbox = mailbox.sent_folder()
         elif readbox == '3':
