@@ -1,6 +1,5 @@
 # coding=utf-8
 
-
 #  O365-Client -- A client to connect O365
 #  Copyright (C) 2020  Micraow
 #
@@ -21,7 +20,6 @@ from mailboxactions import *
 
 credentials = ('74424fcf-55d7-4e15-99d7-1663c0ba2e94',)
 account = Account(credentials, auth_flow_type='public')
-email = MailboxActions()
 
 
 class Start:
@@ -31,15 +29,15 @@ class Start:
         self.choice = choice
 
     def mail_or_calendar(self):
-        email.check_if_authenticated()
+        MailboxActions().check_if_authenticated()
         self.choice = input('进入邮箱还是日历？(E/C)')
         if self.choice == 'E':
             self.choice = input('看邮件还是写邮件？(R/W)')
             if self.choice == 'R':
-                email.read_email()
+                MailboxActions().read_email()
             elif self.choice == 'W':
-                email.get_full_mail_info()
-                email.send_email()
+                MailboxActions().get_full_mail_info()
+                MailboxActions().send_email()
             else:
                 Start().mail_or_calendar()
         elif self.choice == 'C':
