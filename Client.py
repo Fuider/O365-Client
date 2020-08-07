@@ -16,10 +16,8 @@
 #  You should have received a copy of the GNU General Public License
 #  along with this program.  If not, see <https://www.gnu.org/licenses/>.
 
-from mailboxactions import *
-
-credentials = ('74424fcf-55d7-4e15-99d7-1663c0ba2e94', )
-account = Account(credentials, auth_flow_type='public')
+from mailboxactions import MailboxActions
+import os
 
 
 class Start:
