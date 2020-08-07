@@ -50,6 +50,7 @@ class MailboxActions:
         但是分为10次加载。"""
 
         mailbox = self.account.mailbox()
+        global readbox
         print('''
         你要进入哪个文件夹？
         1.收件箱
@@ -61,15 +62,23 @@ class MailboxActions:
 
         if readbox == '1':
             readbox = mailbox.inbox_folder()
-            message.Message(protocol='MSGraphProtocol', main_resource='me', download_attachments=False)
         elif readbox == '2':
             readbox = mailbox.sent_folder()
         elif readbox == '3':
             readbox = mailbox.junk_folder()
         else:
             readbox = mailbox.deleted_folder()
-        for messages in readbox.get_messages(limit=150, batch=2000):
+        for messages in readbox.get_messages(limit=150, batch=200):
             print(messages)
+        os.system('pause')
+
+    def get_body_text(self):
+        global readbox
+        will_read_sub = input('请输入要阅读的邮件的主题。\n')
+        for messages in readbox.get_messages(limit=150, batch=200):
+            if messages.subject == will_read_sub:
+                print(messages.body)
+
         os.system('pause')
 
     def send_email(self):

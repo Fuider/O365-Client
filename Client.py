@@ -16,7 +16,9 @@
 #  You should have received a copy of the GNU General Public License
 #  along with this program.  If not, see <https://www.gnu.org/licenses/>.
 
-from mailboxactions import *
+from O365 import Account
+from mailboxactions import MailboxActions
+import os
 
 credentials = ('74424fcf-55d7-4e15-99d7-1663c0ba2e94',)
 account = Account(credentials, auth_flow_type='public')
@@ -35,6 +37,12 @@ class Start:
             self.choice = input('看邮件还是写邮件？(R/W)')
             if self.choice == 'R':
                 MailboxActions().read_email()
+                self.choice = input('要阅读正文吗？（Y/N)?')
+                if self.choice == 'Y':
+                    print('\n')
+                    MailboxActions().get_body_text()
+                    os.system('pause')
+
             elif self.choice == 'W':
                 MailboxActions().get_full_mail_info()
                 MailboxActions().send_email()
