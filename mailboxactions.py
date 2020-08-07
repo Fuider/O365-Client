@@ -1,5 +1,3 @@
-
-
 #  O365-Client -- A client to connect O365
 #  Copyright (C) 2020  Micraow
 #
@@ -20,13 +18,12 @@ from O365 import Account, message
 import os
 import re
 
-credentials = ('74424fcf-55d7-4e15-99d7-1663c0ba2e94',)
+credentials = ('74424fcf-55d7-4e15-99d7-1663c0ba2e94', )
 account = Account(credentials, auth_flow_type='public')
 
 
 class MailboxActions:
     """用来对邮箱进行操作"""
-
     def __init__(self):
 
         # 已实现公共客户端流

@@ -18,13 +18,12 @@
 
 from mailboxactions import *
 
-credentials = ('74424fcf-55d7-4e15-99d7-1663c0ba2e94',)
+credentials = ('74424fcf-55d7-4e15-99d7-1663c0ba2e94', )
 account = Account(credentials, auth_flow_type='public')
 
 
 class Start:
     """这里是应用入口"""
-
     def __init__(self, choice=None):
         self.choice = choice
 
