@@ -1,3 +1,5 @@
+
+
 #  O365-Client -- A client to connect O365
 #  Copyright (C) 2020  Micraow
 #
@@ -14,7 +16,7 @@
 #  You should have received a copy of the GNU General Public License
 #  along with this program.  If not, see <https://www.gnu.org/licenses/>.
 
-from O365 import Account, message
+from O365 import Account
 import os
 import re
 
@@ -46,6 +48,7 @@ class MailboxActions:
         但是分为10次加载。"""
 
         mailbox = self.account.mailbox()
+        global readbox
         print('''
         你要进入哪个文件夹？
         1.收件箱
@@ -63,8 +66,17 @@ class MailboxActions:
             readbox = mailbox.junk_folder()
         else:
             readbox = mailbox.deleted_folder()
-        for messages in readbox.get_messages(limit=150, batch=2000):
+        for messages in readbox.get_messages(limit=150, batch=200):
             print(messages)
+        os.system('pause')
+
+    def get_body_text(self):
+        global readbox
+        will_read_sub = input('请输入要阅读的邮件的主题。\n')
+        for messages in readbox.get_messages(limit=150, batch=200):
+            if messages.subject == will_read_sub:
+                print(messages.body)
+
         os.system('pause')
 
     def send_email(self):
