@@ -75,6 +75,8 @@ class MailboxActions:
         will_read_sub = input('请输入要阅读的邮件的主题。\n')
         for messages in readbox.get_messages(limit=150, batch=200):
             if messages.subject == will_read_sub:
+                print(messages.subject)
+                print('\n----------------------------\n')
                 print(messages.body)
 
         os.system('pause')
