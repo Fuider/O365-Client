@@ -1,5 +1,3 @@
-
-
 #  O365-Client -- A client to connect O365
 #  Copyright (C) 2020  Micraow
 #
@@ -78,8 +76,6 @@ class MailboxActions:
                 print(messages.subject)
                 print('\n----------------------------\n')
                 print(messages.body)
-
-        os.system('pause')
 
     def send_email(self):
         global to_who

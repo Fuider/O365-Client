@@ -37,7 +37,8 @@ class Start:
                     print('\n')
                     MailboxActions().get_body_text()
                     os.system('pause')
-
+                else:
+                    os.system('pause')
             elif self.choice == 'W':
                 MailboxActions().get_full_mail_info()
                 MailboxActions().send_email()
