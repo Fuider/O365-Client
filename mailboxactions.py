@@ -69,6 +69,7 @@ class MailboxActions:
         os.system('pause')
 
     def get_body_text(self):
+        """获取邮件正文，通过----------分割同主题的不同邮件，但是现在获取HTML邮件正文会打印源码"""
         global readbox
         will_read_sub = input('请输入要阅读的邮件的主题。\n')
         for messages in readbox.get_messages(limit=150, batch=200):
@@ -78,6 +79,7 @@ class MailboxActions:
                 print(messages.body)
 
     def send_email(self):
+        """通过从get_full_mail_info获取的信息发件"""
         global to_who
         global subj
         global text
@@ -90,6 +92,7 @@ class MailboxActions:
         os.system('pause')
 
     def get_full_mail_info(self):
+        """用户要发送邮件时，获取收件人，主题，正文，并确认"""
         global to_who
         global subj
         global text
