@@ -17,6 +17,7 @@
 #  along with this program.  If not, see <https://www.gnu.org/licenses/>.
 
 from mailboxactions import MailboxActions
+from calendar import Read
 import os
 
 
@@ -45,7 +46,7 @@ class Start:
             else:
                 Start().mail_or_calendar()
         elif self.choice == 'C':
-            print('开发中，敬请期待')
+            Read().get_event()
             os.system("pause")
         else:
             Start().mail_or_calendar()

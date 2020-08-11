@@ -29,7 +29,7 @@ class MailboxActions:
         # 已实现公共客户端流
         self.account = account
         self.credentials = credentials
-        self.scopes = ['basic', 'message_all']  # 请求权限
+        self.scopes = ['basic', 'message_all','calendar_all']  # 请求权限
 
     def check_if_authenticated(self):
         """检查是否有用户登录，若无，则请求登录"""
