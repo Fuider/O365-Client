@@ -23,9 +23,8 @@ account = Account(credentials, auth_flow_type='public')
 Mailbox = MailboxActions()
 Mailbox.check_if_authenticated()
 
-class Read():
+class Read:
     """专门用来读取日历"""
-
     def __init__(self):
         pass
 
@@ -40,5 +39,4 @@ class Read():
         for event in events:
             print(event)
 
-Read().get_event()
 

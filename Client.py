@@ -17,7 +17,7 @@
 #  along with this program.  If not, see <https://www.gnu.org/licenses/>.
 
 from mailboxactions import MailboxActions
-from calendar import Read
+from events import Read
 import os
 
 
