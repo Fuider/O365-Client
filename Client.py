@@ -46,7 +46,7 @@ class Start:
             else:
                 Start().mail_or_calendar()
         elif self.choice == 'C':
-            Read().get_event()
+            Read().clear_event()
             os.system("pause")
         else:
             Start().mail_or_calendar()
