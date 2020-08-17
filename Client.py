@@ -23,6 +23,7 @@ import os
 
 class Start:
     """这里是应用入口"""
+
     def __init__(self, choice=None):
         self.choice = choice
 
@@ -46,6 +47,7 @@ class Start:
             else:
                 Start().mail_or_calendar()
         elif self.choice == 'C':
+            Read().load_events()
             Read().clear_event()
             os.system("pause")
         else:

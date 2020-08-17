@@ -24,12 +24,13 @@ account = Account(credentials, auth_flow_type='public')
 
 class MailboxActions:
     """用来对邮箱进行操作"""
+
     def __init__(self):
 
         # 已实现公共客户端流
         self.account = account
         self.credentials = credentials
-        self.scopes = ['basic', 'message_all','calendar_all']  # 请求权限
+        self.scopes = ['basic', 'message_all', 'calendar_all']  # 请求权限
 
     def check_if_authenticated(self):
         """检查是否有用户登录，若无，则请求登录"""
@@ -64,7 +65,7 @@ class MailboxActions:
             readbox = mailbox.junk_folder()
         else:
             readbox = mailbox.deleted_folder()
-        for messages in readbox.get_messages(limit=150, batch=200):
+        for messages in readbox.get_messages(limit=150, batch=20):
             print(messages)
         os.system('pause')
 
@@ -72,7 +73,7 @@ class MailboxActions:
         """获取邮件正文，通过----------分割同主题的不同邮件，但是现在获取HTML邮件正文会打印源码"""
         global readbox
         will_read_sub = input('请输入要阅读的邮件的主题。\n')
-        for messages in readbox.get_messages(limit=150, batch=200):
+        for messages in readbox.get_messages(limit=150, batch=20):
             if messages.subject == will_read_sub:
                 print(messages.subject)
                 print('\n----------------------------\n')
