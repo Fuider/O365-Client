@@ -69,7 +69,7 @@ class MailboxActions:
             print(messages)
         os.system('pause')
 
-    def get_body_text(self):
+    def get_body(self):
         """获取邮件正文，通过----------分割同主题的不同邮件，但是现在获取HTML邮件正文会打印源码"""
         global readbox
         will_read_sub = input('请输入要阅读的邮件的主题。\n')

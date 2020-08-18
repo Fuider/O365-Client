@@ -37,7 +37,7 @@ class Start:
                 self.choice = input('要阅读正文吗？（Y/N)?')
                 if self.choice == 'Y':
                     print('\n')
-                    MailboxActions().get_body_text()
+                    MailboxActions().get_body()
                     os.system('pause')
                 else:
                     os.system('pause')
@@ -49,6 +49,7 @@ class Start:
         elif self.choice == 'C':
             Read().load_events()
             Read().clear_event()
+
             os.system("pause")
         else:
             Start().mail_or_calendar()

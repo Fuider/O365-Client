@@ -59,9 +59,13 @@ class Read:
     def event_time(self):
         """(开发中)输出经正则表达式处理过的日程（仅时间）"""
         global events
-        reg2 = re.compile(r'.*\s+(.*?)')  # 总是匹配不上，是我写的有问题吗？
+        reg2 = re.compile(r'\((.*)\)')
         for event in events:  # 直接从load_events那里获取
             # (已修复)就是这里的正则总是报错 re.error: multiple repeat at position 9
-            event_time_list = reg2.findall(str(event), 7)
-        for event_time in event_time_list:
-            print(event_time)
+            event_time_list = reg2.search(str(event))
+            time = event_time_list.group()
+            print(time)
+
+    def time_query(self, event_subject):
+        """供用户输入主题，获取事件起始时间"""
+        pass
