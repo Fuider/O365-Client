@@ -17,11 +17,13 @@
 #  along with this program.  If not, see <https://www.gnu.org/licenses/>.
 
 from mailboxactions import MailboxActions
+from events import Read
 import os
 
 
 class Start:
     """这里是应用入口"""
+
     def __init__(self, choice=None):
         self.choice = choice
 
@@ -35,7 +37,7 @@ class Start:
                 self.choice = input('要阅读正文吗？（Y/N)?')
                 if self.choice == 'Y':
                     print('\n')
-                    MailboxActions().get_body_text()
+                    MailboxActions().get_body()
                     os.system('pause')
                 else:
                     os.system('pause')
@@ -45,7 +47,9 @@ class Start:
             else:
                 Start().mail_or_calendar()
         elif self.choice == 'C':
-            print('开发中，敬请期待')
+            Read().load_events()
+            Read().clear_event()
+
             os.system("pause")
         else:
             Start().mail_or_calendar()
