@@ -12,7 +12,7 @@
 
 # 联系
 
-如果您遇到问题，或是有任何建议，欢迎联系我们：邮件：[pengbo@pengbo0708.onmicrosoft.com](mailto:pengbo@pengbo0708.onmicrosoft.com), Telegram 用户群：[点击这里](https://t.me/dreamsbuilderuser)。
+如果您遇到问题，或是有任何建议，欢迎联系我们：邮件：[pengbo@pengbo0708.onmicrosoft.com](mailto:pengbo@pengbo0708.onmicrosoft.com), Telegram 用户群：[点击这里](https://t.me/fuider)。
 
 # 注意
 
