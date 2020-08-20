@@ -8,6 +8,8 @@
 
 用 Python 编写的代码示例，与 O365 连接并查阅邮件，查看日历等。我们的梦想是尽可能多的集成 API。
 
+欢迎大家前往[Microsoft Graph分支](https://github.com/Dreams-builder/O365-Client/tree/Microsoft-Graph)！
+
 # 联系
 
 如果您遇到问题，或是有任何建议，欢迎联系我们：邮件：[pengbo@pengbo0708.onmicrosoft.com](mailto:pengbo@pengbo0708.onmicrosoft.com), Telegram 用户群：[点击这里](https://t.me/dreamsbuilderuser)。
