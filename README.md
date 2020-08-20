@@ -1,5 +1,7 @@
 # O365-Client
 
+[English](https://github.com/Fuider/O365-Client/tree/english)
+
 本程序真实维护人,主要人员:Micraow, xiaocao162020, ella
 
 在为本项目做出贡献前，请仔细阅读 python-o365 项目的文档，及全部代码 [传送门](https://github.com/O365/python-o365)
@@ -8,7 +10,7 @@
 
 用 Python 编写的代码示例，与 O365 连接并查阅邮件，查看日历等。我们的梦想是尽可能多的集成 API。
 
-欢迎大家前往[Microsoft Graph分支](https://github.com/Dreams-builder/O365-Client/tree/Microsoft-Graph)！
+欢迎大家前往[Microsoft Graph 分支](https://github.com/Dreams-builder/O365-Client/tree/Microsoft-Graph)！
 
 # 联系
 
