@@ -1,6 +1,6 @@
 # O365-Client
 
-**[English](https://github.com/Fuider/O365-Client/tree/english)**
+**[English](https://github.com/Fuider/O365-Client/blob/master/enREADME.md)**
 
 本程序真实维护人,主要人员:Micraow, xiaocao162020, ella
 
