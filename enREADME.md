@@ -1,6 +1,6 @@
 # O365-Client
 
-**[简体中文(Chinese Simplefied)](https://github.com/Fuider/O365-Client)
+\*\*[简体中文(Chinese Simplefied)](https://github.com/Fuider/O365-Client)
 
 The main authors of this program: Micraow, xiaocao162020, ella.
 

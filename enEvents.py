@@ -27,21 +27,22 @@ Mailbox.check_if_authenticated()
 
 class Read:
     """Read the events in the calendar"""
+
     def __init__(self):
         pass
 
     def get_event(self):
         """get the events"""
         global events
-        for event in events: # get from load_events
+        for event in events:  # get from load_events
             print(event)
 
     def clear_event(self):
         """Output the name of the events"""
         global events
-        for event in events: # get from load_events
-            reg = r'Subject:\s(.*?)\s'  
-            clear_event = re.match(reg,str(event)) 
+        for event in events:  # get from load_events
+            reg = r'Subject:\s(.*?)\s'
+            clear_event = re.match(reg, str(event))
             print(clear_event.group())
 
     def load_events(self):

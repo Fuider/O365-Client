@@ -63,19 +63,21 @@ class Start:
 
 class Languagecheck:
     """这里用于检测语言"""
+
     def lang_chck(self):
 
         lang_exists = os.path.isfile("lang")
         if lang_exists == True:
-            f1 = open('lang',encoding='utf-8',mode='r')
+            f1 = open('lang', encoding='utf-8', mode='r')
             msg = f1.read()
             if msg == '1':
                 Start().mail_or_calendar()
             elif msg == '2':
                 En_Start().mail_or_calendar()
         else:
-                print("请设置你的语言,然后重启应用。Please set your language, then restart the program.")
-                Setlang().set_language()
+            print("请设置你的语言,然后重启应用。Please set your language, then restart the program.")
+            Setlang().set_language()
+
 
 langu = Languagecheck()
 langu.lang_chck()

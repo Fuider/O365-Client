@@ -27,17 +27,21 @@ import os
 
 class En_Start:
     """The start of the app."""
+
     def __init__(self, choice=None):
         self.choice = choice
 
     def mail_or_calendar(self):
         MailboxActions().check_if_authenticated()
-        self.choice = input('Do you want to go to email (E) or calendar (C)? You can also give us a feedback (F).')
+        self.choice = input(
+            'Do you want to go to email (E) or calendar (C)? You can also give us a feedback (F).')
         if self.choice == 'E':
-            self.choice = input('Do you want to read an email (R) or write an email (W)?')
+            self.choice = input(
+                'Do you want to read an email (R) or write an email (W)?')
             if self.choice == 'R':
                 MailboxActions().read_email()
-                self.choice = input('Do you want to read the body of the email?')
+                self.choice = input(
+                    'Do you want to read the body of the email?')
                 if self.choice == 'Y':
                     print('\n')
                     MailboxActions().get_body()
@@ -58,6 +62,4 @@ class En_Start:
             EnSupport().support
             os.system("pause")
         else:
-            Start().mail_or_calendar()
-
-
+            En_Start().mail_or_calendar()

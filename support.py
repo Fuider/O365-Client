@@ -23,10 +23,11 @@ import os
 credentials = ('74424fcf-55d7-4e15-99d7-1663c0ba2e94', )
 account = Account(credentials, auth_flow_type='public')
 
+
 class Support:
     def __init__(self, choice=None):
         self.choice = choice
-    
+
     def support(self):
         MailboxActions().check_if_authenticated()
         """通过从获取的信息发件"""
@@ -46,4 +47,3 @@ class Support:
         m.send()
         print('\n你的需求已发送。我们会尽快处理，请在三天内查看你的收件箱。谢谢！\n')
         os.system('pause')
-

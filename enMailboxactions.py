@@ -28,11 +28,12 @@ account = Account(credentials, auth_flow_type='public')
 
 class MailboxActions:
     """The actions in mailbox"""
+
     def __init__(self):
 
         self.account = account
         self.credentials = credentials
-        self.scopes = ['basic', 'message_all','calendar_all']  # request
+        self.scopes = ['basic', 'message_all', 'calendar_all']  # request
 
     def check_if_authenticated(self):
         """check if the user had logged in to their Microsoft account, if not, login."""
@@ -41,7 +42,6 @@ class MailboxActions:
             self.account.authenticate(scopes=self.scopes)
 
     def read_email(self):
-        
 
         mailbox = self.account.mailbox()
         global readbox
@@ -69,7 +69,8 @@ class MailboxActions:
     def get_body_text(self):
         """Get the body of the email，use "----------" to cut through different emails with the same subject, the html-email will print the html code."""
         global readbox
-        will_read_sub = input('Please enter the subject of the email which you want to read the body of it: \n')
+        will_read_sub = input(
+            'Please enter the subject of the email which you want to read the body of it: \n')
         for messages in readbox.get_messages(limit=150, batch=200):
             if messages.subject == will_read_sub:
                 print(messages.subject)
@@ -94,7 +95,8 @@ class MailboxActions:
         global to_who
         global subj
         global text
-        new_people = input('\nPlease enter the email address you want to send to, divide them in ";": \n')
+        new_people = input(
+            '\nPlease enter the email address you want to send to, divide them in ";": \n')
         result1 = re.split(r'[;]', new_people)  # By @xiaocao162020
         print('Check these email addresses, press enter to continue.')
         print(result1)
