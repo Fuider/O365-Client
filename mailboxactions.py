@@ -65,7 +65,7 @@ class MailboxActions:
             readbox = mailbox.junk_folder()
         else:
             readbox = mailbox.deleted_folder()
-        for messages in readbox.get_messages(limit=150, batch=20):
+        for messages in readbox.get_messages(limit=75, batch=20):
             print(messages)
         os.system('pause')
 
@@ -73,7 +73,7 @@ class MailboxActions:
         """获取邮件正文，通过----------分割同主题的不同邮件，但是现在获取HTML邮件正文会打印源码"""
         global readbox
         will_read_sub = input('请输入要阅读的邮件的主题。\n')
-        for messages in readbox.get_messages(limit=150, batch=20):
+        for messages in readbox.get_messages(limit=75, batch=20):
             if messages.subject == will_read_sub:
                 print(messages.subject)
                 print('\n----------------------------\n')

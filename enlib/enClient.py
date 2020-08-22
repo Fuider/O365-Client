@@ -19,9 +19,9 @@
 
 # This file is translated by Xiaocao162020, there maybe mistakes, we are glad if you can tell us about the problems.
 
-from enMailboxactions import MailboxActions
+from .enMailboxactions import MailboxActions
 from events import Read
-from enSupport import EnSupport
+from .enSupport import EnSupport
 import os
 
 
@@ -44,7 +44,7 @@ class En_Start:
                     'Do you want to read the body of the email?')
                 if self.choice == 'Y':
                     print('\n')
-                    MailboxActions().get_body()
+                    MailboxActions().get_body_text()
                     os.system('pause')
                 else:
                     os.system('pause')
@@ -52,7 +52,7 @@ class En_Start:
                 MailboxActions().get_full_mail_info()
                 MailboxActions().send_email()
             else:
-                Start().mail_or_calendar()
+                En_Start().mail_or_calendar()
         elif self.choice == 'C':
             Read().load_events()
             Read().clear_event()
