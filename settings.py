@@ -24,18 +24,18 @@ class Setlang:
     def set_language(self):
         entered_lancode_right = False
         while not entered_lancode_right:
-            language = input(
+            self.language = input(
                 '请选择语言\nPlease choose your language:\n1.ZH\n2.EN\n')
-            if language == '1':
+            if self.language == '1':
                 f1 = open("lang", encoding='utf-8', mode='w')
-                f1.write(language)
+                f1.write(self.language)
                 f1.close()
                 print('您的语言已经被设为中文。\n')
                 entered_lancode_right = True
                 time.sleep(2)
-            elif language == '2':
+            elif self.language == '2':
                 f1 = open('lang', encoding='utf-8', mode='w')
-                f1.write(language)
+                f1.write(self.language)
                 f1.close()
                 print('Your language had been set to English.')
                 entered_lancode_right = True
@@ -52,19 +52,19 @@ class Setlang:
             msg = f4.read
             if msg == '1':
                 while not entered_mailopencode_right:
-                    open_email_mode = input('请选择阅读邮件时的打开方式\n1.txt\n2.html)')
-                    if open_email_mode == '1':
+                    self.open_email_mode = input('请选择阅读邮件时的打开方式\n1.txt\n2.html)')
+                    if self.open_email_mode == '1':
                         f2 = open('emailloadmethod',
                                   encoding='utf-8', mode='w')
-                        f2.write(open_email_mode)
+                        f2.write(self.open_email_mode)
                         f2.close()
                         print('您的加载邮件方式已被设为纯文本。')
                         entered_mailopencode_right = True
                         time.sleep(2)
-                    elif open_email_mode == '2':
+                    elif self.open_email_mode == '2':
                         f2 = open('emailloadmethod',
                                   encoding='utf-8', mode='w')
-                        f2.write(open_email_mode)
+                        f2.write(self.open_email_mode)
                         f2.close()
                         print('您的加载邮件方式已被设为HTML。')
                         entered_mailopencode_right = True
@@ -93,7 +93,7 @@ class Setlang:
                         entered_mailopencode_right = True
                         time.sleep(2)
                     else:
-                        print('您输入了错误的打开邮件方式代码。请重新输入。\n')
+                        print('You had just entered an incorrect code for loading emails. Please re-enter.\n')
                         time.sleep(3)
         while not entered_mailopencode_right:
             open_email_mode = input(
