@@ -16,6 +16,9 @@
 #  You should have received a copy of the GNU General Public License
 #  along with this program.  If not, see <https://www.gnu.org/licenses/>.
 
+
+# This file is translated by Xiaocao162020, there maybe mistakes, we are glad if you can tell us about the problems.
+
 from mailboxactions import MailboxActions
 from events import Read
 from enlib.enClient import En_Start
@@ -27,6 +30,7 @@ import os
 class Start:
     """这里是应用入口"""
 
+    """The start of the app."""
     def __init__(self, choice=None):
         self.choice = choice
 
@@ -34,10 +38,10 @@ class Start:
         MailboxActions().check_if_authenticated()
         self.choice = input('进入邮箱还是日历？(E/C) 您也可以向我们反馈。(S)')
         if self.choice == 'E':
-            self.choice = input('看邮件还是写邮件？(R/W)')
+            self.choice = input('Do you want to read an email (R) or write an email (W)?')
             if self.choice == 'R':
                 MailboxActions().read_email()
-                self.choice = input('要阅读正文吗？（Y/N)?')
+                self.choice = input('Do you want to read the body of the email?')
                 if self.choice == 'Y':
                     print('\n')
                     MailboxActions().get_body()
