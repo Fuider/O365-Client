@@ -1,5 +1,5 @@
 import json
-"""beta版本，不要集成，必出bug,有已知问题。"""
+"""beta版本，可选择集成，已知问题已修复。"""
 
 
 class settings:
@@ -11,8 +11,7 @@ class settings:
                 self.mail_open = self.user_sets['mail_open']
         except FileNotFoundError:
             self.dict = {'lang': '', 'mail_open': ''}
-            self.data1 = json.loads(str(self.dict))
-            self.data2 = json.dumps(self.data1)
+            self.data2 = json.dumps(self.dict)
             with open('settings.json', 'w') as sets:
                 sets.write(self.data2)
             with open('settings.json', 'r') as sets:
@@ -51,7 +50,7 @@ class settings:
         elif choose == '2':
             self.set_mail_open()
         elif choose == '3':
-            self.save_mail_set()
+            self.save_sets()
             input('按下回车键以退出 Press Enter to exit')
         else:
             print('您输入了错误的数字！请重新输入\nYou entered a wrong number! Please re-enter.')
@@ -59,7 +58,7 @@ class settings:
 
     def set_mail_open(self):
         self.open_email_mode = input(
-            '请选择阅读邮件时的打开方式\nPlease choose your mode of loading an email\n1.txt\n2.html)')
+            '请选择阅读邮件时的打开方式\nPlease choose your mode of loading an email\n1.txt\n2.html\n')
         if self.open_email_mode == '1':
             print(
                 '您的加载邮件方式已被设为纯文本。Your method of loading emails have been set to txt.')
@@ -69,11 +68,16 @@ class settings:
         else:
             print(
                 '您输入了错误的打开邮件方式代码。请重新输入。\nYou had just entered an incorrect code for loading emails. Please re-enter.')
-        self.save_mail_set()
+        self.choose_set()
 
-    def save_mail_set(self):
-        with open('setting.json', 'w+') as sets:
-            self.data1['mail_open'] = self.open_email_mode
-            self.data1['lang'] = self.lan
-            self.data4 = json.dumps(self.data1)
-            sets.write(self.data4)
+    def save_sets(self):
+        with open('settings.json', 'r') as sets:
+            self.ori_set = json.load(sets)
+            self.ori_set['mail_open'] = self.open_email_mode
+            self.ori_set['lang'] = self.lan
+            self.data4 = json.dumps(self.ori_set)
+        with open('settings.json', 'w') as wset:
+            wset.write(self.data4)
+
+
+settings().choose_set()
