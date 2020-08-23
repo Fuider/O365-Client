@@ -1,5 +1,5 @@
 import json
-
+"""beta版本，不要集成，必出bug,有已知问题。"""
 
 class settings:
     def __init__(self):
