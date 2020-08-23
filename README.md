@@ -36,11 +36,12 @@ Bug 已解决，但相关方法尚未集成。
 程序很简单，通过我的应用 ID 和机密连接到你的账号，并操作，运用了一个模板 [O365](https://github.com/O365/python-o365 "O365").
 如果你要使用，请：
 
-1. `pip install O365`
+# 用法
 
-2.准备一个微软账号 [注册](https://account.microsoft.com/account?lang=zh-cn) ，事实上我更推荐含 Office 365(现更名为 Microsoft 365)的 E5 开发者订阅（我用的就是这个比较靠谱，而且可以支持所有的 API），注册方法请自行百度。
+1. pip install O365
+2. 准备一个微软账号 [注册](https://account.microsoft.com/account?lang=zh-cn) ，事实上我更推荐含 Office 365(现更名为 Microsoft 365)的 E5 开发者订阅（我用的就是这个比较靠谱，而且可以支持所有的 API），注册方法请自行百度。
 
-没了，就这么简单！
+# Announcement
 
 ## 关于 office 365 账户
 
@@ -52,9 +53,14 @@ Bug 已解决，但相关方法尚未集成。
 2. 按下"立即加入"，或"了解更多信息"，接下来你需要登录你注册的免费的微软账号。
    ![图片](https://share.pengbo.workers.dev/1595596248544.jpg)
 
-3. 然后它会要你填些信息，随便填一填就好了。
+3. We are a group of students who love Information Technology, NOT oen of the Official groups of Microsoft.😂
 
-4. 然后它会提示你没有订阅，按左边的加号新建一个，这过程因为要通过谷歌的验证码进行验证，所以需要科学上网，准备好工具。
+**We welcome Pull requests and Issues!**
+This is our first project, so we are glad if you can help us.
+~~From Jul.23th 2020, I will stop the project maintenance, but I will continue do it if I have time.~~
+Thanks for the friends in CSDN (P.S.One of China's biggest developers community -A kind note translater xiaocao162020) and Telegram, so I decided to continue doing this program.
+The program is very easy. Just use your account to connect our APP ID and secret password and you can operate! We used the [O365](https://github.com/O365/python-o365) project.
+If you want to use, please:
 
 5.然后你添加完之后就能拿到一个有 25 位用户许可证的 E5 订阅，包含了全套的 office 套件，可用来正版激活软件，就不用熊那些么盗版的激活工具了，只要登录你的账号就可以激活办公软件了，不止支持软件的激活，这个订阅还包括了每个用户都有 5 TB 的云存储空间，还有你可以给他们分配邮箱。我的做法是给我的朋友们分配了这些邮箱，然后我便可以与他们联系。
 [Office 网页版](https://office.com)
@@ -70,7 +76,7 @@ https://blog.curlc.com/archives/599.html
 具体如何更改 onedrive 的容量，请看这篇文章。
 https://blog.curlc.com/archives/66.html
 
-## 面向用户的使用方法
+That's it! Done!
 
 运行 Client.py
 

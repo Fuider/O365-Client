@@ -14,6 +14,10 @@
 #  You should have received a copy of the GNU General Public License
 #  along with this program.  If not, see <https://www.gnu.org/licenses/>.
 
+
+# This file is translated by Xiaocao162020, there maybe mistakes, we are glad if you can tell us about the problems.
+
+
 from O365 import Account
 import os
 import re
@@ -25,37 +29,32 @@ account = Account(credentials, auth_flow_type='public')
 class MailboxActions:
     """用来对邮箱进行操作"""
 
+    """The actions in mailbox"""
     def __init__(self):
 
-        # 已实现公共客户端流
         self.account = account
         self.credentials = credentials
         self.scopes = ['basic', 'message_all', 'calendar_all']  # 请求权限
 
     def check_if_authenticated(self):
-        """检查是否有用户登录，若无，则请求登录"""
-        if not self.account.is_authenticated:  # 检查是否登录
-            # 请求登录
+        """check if the user had logged in to their Microsoft account, if not, login."""
+        if not self.account.is_authenticated:  # check if logged in
+            # request to login
             self.account.authenticate(scopes=self.scopes)
 
     def read_email(self):
-        """遍历邮件
-        limit 表示加载多少个，微软官方一次API调用只返回999个，
-        而O365模块默认25个，只有limit>25时utils分页功能才生效
-        batch批处理表示加载多少次，就是往后加载
-        limit=2000, batch=10 = limit=2000
-        但是分为10次加载。"""
+        
 
         mailbox = self.account.mailbox()
         global readbox
         print('''
-        你要进入哪个文件夹？
-        1.收件箱
-        2.已发送
-        3.垃圾邮件
-        4.已删除\n
-        ''')  # 选择进入哪个文件夹
-        readbox = input('请输入对应数字')
+        Which email folder do you want to get into?
+        1.Inbox
+        2.Sent emails
+        3.Spam folder
+        4.Deleted emails\n
+        ''')  # choose which mailbox to get into
+        readbox = input('Please enter the number.')
 
         if readbox == '1':
             readbox = mailbox.inbox_folder()
@@ -80,7 +79,7 @@ class MailboxActions:
                 print(messages.body)
 
     def send_email(self):
-        """通过从get_full_mail_info获取的信息发件"""
+        """send the email with the function 'get_full_mail_info' """
         global to_who
         global subj
         global text
@@ -89,19 +88,19 @@ class MailboxActions:
         m.subject = subj
         m.body = text
         m.send()
-        print('\n邮件已发送\n')
+        print('\nEmail successfully sent. \n')
         os.system('pause')
 
     def get_full_mail_info(self):
-        """用户要发送邮件时，获取收件人，主题，正文，并确认"""
+        """Get the information when user requests to send an email"""
         global to_who
         global subj
         global text
-        new_people = input('\n收件人是谁？如有多个，每个都以;结尾，最后一个除外。\n')
-        result1 = re.split(r'[;]', new_people)  # 匹配正则式，感谢@xiaocao162020
-        print('请确认这些收件人。')
+        new_people = input('\nPlease enter the email address you want to send to, divide them in ";": \n')
+        result1 = re.split(r'[;]', new_people)  # By @xiaocao162020
+        print('Check these email addresses, press enter to continue.')
         print(result1)
         os.system('pause')
         to_who = result1
-        subj = input('\n主题是什么？\n')
-        text = input('\n 正文是什么？\n')
+        subj = input('\nPlease enter the subject: \n')
+        text = input('\nPlease enter the body: \n')

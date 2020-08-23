@@ -27,6 +27,7 @@ Mailbox.check_if_authenticated()
 class Read:
     """专门用来读取日历"""
 
+    """Read the events in the calendar"""
     def __init__(self):
         pass
 
