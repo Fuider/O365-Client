@@ -1,6 +1,7 @@
 import json
 """beta版本，不要集成，必出bug,有已知问题。"""
 
+
 class settings:
     def __init__(self):
         try:
@@ -72,8 +73,7 @@ class settings:
 
     def save_mail_set(self):
         with open('setting.json', 'w+') as sets:
-                self.data1['mail_open'] = self.open_email_mode
-                self.data1['lang'] = self.lan
-                self.data4 = json.dumps(self.data1)
-                sets.write(self.data4)
-
+            self.data1['mail_open'] = self.open_email_mode
+            self.data1['lang'] = self.lan
+            self.data4 = json.dumps(self.data1)
+            sets.write(self.data4)
