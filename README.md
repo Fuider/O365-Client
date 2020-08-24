@@ -40,8 +40,7 @@ Bug 已解决，但相关方法尚未集成。
 
 1. pip install O365
 2. 准备一个微软账号 [注册](https://account.microsoft.com/account?lang=zh-cn) ，事实上我更推荐含 Office 365(现更名为 Microsoft 365)的 E5 开发者订阅（我用的就是这个比较靠谱，而且可以支持所有的 API），注册方法请自行百度。
-
-# Announcement
+3. 运行Client.py
 
 ## 关于 office 365 账户
 
@@ -54,13 +53,6 @@ Bug 已解决，但相关方法尚未集成。
    ![图片](https://share.pengbo.workers.dev/1595596248544.jpg)
 
 3. We are a group of students who love Information Technology, NOT oen of the Official groups of Microsoft.😂
-
-**We welcome Pull requests and Issues!**
-This is our first project, so we are glad if you can help us.
-~~From Jul.23th 2020, I will stop the project maintenance, but I will continue do it if I have time.~~
-Thanks for the friends in CSDN (P.S.One of China's biggest developers community -A kind note translater xiaocao162020) and Telegram, so I decided to continue doing this program.
-The program is very easy. Just use your account to connect our APP ID and secret password and you can operate! We used the [O365](https://github.com/O365/python-o365) project.
-If you want to use, please:
 
 5.然后你添加完之后就能拿到一个有 25 位用户许可证的 E5 订阅，包含了全套的 office 套件，可用来正版激活软件，就不用熊那些么盗版的激活工具了，只要登录你的账号就可以激活办公软件了，不止支持软件的激活，这个订阅还包括了每个用户都有 5 TB 的云存储空间，还有你可以给他们分配邮箱。我的做法是给我的朋友们分配了这些邮箱，然后我便可以与他们联系。
 [Office 网页版](https://office.com)
@@ -76,9 +68,6 @@ https://blog.curlc.com/archives/599.html
 具体如何更改 onedrive 的容量，请看这篇文章。
 https://blog.curlc.com/archives/66.html
 
-That's it! Done!
-
-运行 Client.py
 
 ## 优点
 
@@ -102,26 +91,26 @@ That's it! Done!
 
 ## TO-DO
 
-- ~~日历功能（读取）~~
-- ~~发送邮件~~
-- ~~公共客户端问题。~~
-- 加载邮件全文(HTML)
-- 加载用户邮件文件夹
-- 允许用户在 txt 文件中编辑邮件，然后程序识别，发送，有利于排版。
-- 删除邮件
-- 标为已读
-- 标为红旗
-- 标为未读
-- ~~获取 object-id~~ (后来发现不用获取)
-- 新建日历日程
-- ”支持“ 功能
-- 移动邮件
-- 将日历功能集成到 Client.py
-- 允许用户通过日程名称检索起始时间
-- 解决 HTML 邮件图片异常的问题
-- 加入 settings.py，允许用户切换显示语言（中、英），以 HTML 格式处理邮件还是纯文本。
-- 移交项目。
-- 通过邮件是否已读检索邮件。
+-[x] 日历功能（读取）
+-[x] 发送邮件
+-[x] 公共客户端问题。
+-[] 加载邮件全文(HTML)
+-[] 加载用户邮件文件夹
+-[] 允许用户在 txt 文件中编辑邮件，然后程序识别，发送，有利于排版。
+-[] 删除邮件
+-[] 标为已读
+-[] 标为红旗
+-[] 标为未读
+-[x] ~~获取 object-id~~ (后来发现不用获取)
+-[] 新建日历日程
+-[] ”支持“ 功能
+-[] 移动邮件
+-[] 将日历功能集成到 Client.py
+-[] 允许用户通过日程名称检索起始时间
+-[] 解决 HTML 邮件图片异常的问题
+-[] 加入 settings.py，允许用户切换显示语言（中、英），以 HTML 格式处理邮件还是纯文本。
+-[] 移交项目。
+-[] 通过邮件是否已读检索邮件。
 
 ## 更新日志
 
