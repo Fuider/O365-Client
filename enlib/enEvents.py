@@ -12,13 +12,12 @@
 #  GNU General Public License for more details.
 #
 #  You should have received a copy of the GNU General Public License
-#  along with this program.  If not, see <https://www.gnu.org/licenses/>.
-from O365.calendar import EventSensitivity
-from mailboxactions import MailboxActions
+#  along with this program.  If not, see <https://www.gnu.org/licenses/>
 from O365 import Account
+from .enMailboxactions import *
 import re
 
-credentials = ('74424fcf-55d7-4e15-99d7-1663c0ba2e94', )
+credentials = ('e089ce98-73af-46f6-8312-0501536effcb', )
 account = Account(credentials, auth_flow_type='public')
 
 Mailbox = MailboxActions()

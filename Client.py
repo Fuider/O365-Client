@@ -26,6 +26,8 @@ from support import Support
 from settings import Setlang
 import os
 
+mail = MailboxActions()
+calendar = Read()
 
 class Start:
     """这里是应用入口"""
@@ -35,27 +37,27 @@ class Start:
         self.choice = choice
 
     def mail_or_calendar(self):
-        MailboxActions().check_if_authenticated()
+        mail.check_if_authenticated()
         self.choice = input('进入邮箱还是日历？(E/C) 您也可以向我们反馈。(S)')
         if self.choice == 'E':
             self.choice = input('Do you want to read an email (R) or write an email (W)?')
             if self.choice == 'R':
-                MailboxActions().read_email()
+                mail.read_email()
                 self.choice = input('Do you want to read the body of the email?')
                 if self.choice == 'Y':
                     print('\n')
-                    MailboxActions().get_body()
+                    mail.get_body()
                     os.system('pause')
                 else:
                     os.system('pause')
             elif self.choice == 'W':
-                MailboxActions().get_full_mail_info()
-                MailboxActions().send_email()
+                mail.get_full_mail_info()
+                mail.send_email()
             else:
                 Start().mail_or_calendar()
         elif self.choice == 'C':
-            Read().load_events()
-            Read().clear_event()
+            calendar.load_events()
+            calendar.clear_event()
 
             os.system("pause")
         elif self.choice == 'S':

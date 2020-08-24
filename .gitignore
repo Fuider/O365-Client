@@ -134,3 +134,6 @@ dmypy.json
 
 #token
 o365_token.txt
+lang
+settings.json
+emailloadmethod

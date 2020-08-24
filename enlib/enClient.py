@@ -19,11 +19,12 @@
 
 # This file is translated by Xiaocao162020, there maybe mistakes, we are glad if you can tell us about the problems.
 
-from .enMailboxactions import MailboxActions
+from .enMailboxactions import *
 from events import Read
 from .enSupport import EnSupport
 import os
-
+calendar = Read()
+mail = MailboxActions()
 
 class En_Start:
     """The start of the app."""
@@ -32,25 +33,25 @@ class En_Start:
         self.choice = choice
 
     def mail_or_calendar(self):
-        MailboxActions().check_if_authenticated()
+        mail.check_if_authenticated()
         self.choice = input(
             'Do you want to go to email (E) or calendar (C)? You can also give us a feedback (F).')
         if self.choice == 'E':
             self.choice = input(
                 'Do you want to read an email (R) or write an email (W)?')
             if self.choice == 'R':
-                MailboxActions().read_email()
+                mail.read_email()
                 self.choice = input(
                     'Do you want to read the body of the email?')
                 if self.choice == 'Y':
                     print('\n')
-                    MailboxActions().get_body_text()
+                    mail.get_body_text()
                     os.system('pause')
                 else:
                     os.system('pause')
             elif self.choice == 'W':
-                MailboxActions().get_full_mail_info()
-                MailboxActions().send_email()
+                mail.get_full_mail_info()
+                mail.send_email()
             else:
                 En_Start().mail_or_calendar()
         elif self.choice == 'C':

@@ -20,7 +20,7 @@ from mailboxactions import MailboxActions
 from O365 import Account
 import os
 
-credentials = ('74424fcf-55d7-4e15-99d7-1663c0ba2e94', )
+credentials = ('e089ce98-73af-46f6-8312-0501536effcb', )
 account = Account(credentials, auth_flow_type='public')
 
 class EnSupport:
