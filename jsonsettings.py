@@ -73,11 +73,27 @@ class settings:
     def save_sets(self):
         with open('settings.json', 'r') as sets:
             self.ori_set = json.load(sets)
-            self.ori_set['mail_open'] = self.open_email_mode
-            self.ori_set['lang'] = self.lan
+            try:
+                self.ori_set['mail_open'] = self.open_email_mode
+            except AttributeError:
+                self.ori_set['mail_open'] = 1  # 默认纯文本
+            try:
+                self.ori_set['lang'] = self.lan
+            except:
+                self.ori_set['lang'] = 'Chinese'
             self.data4 = json.dumps(self.ori_set)
         with open('settings.json', 'w') as wset:
             wset.write(self.data4)
 
+    def load_sets(self):
+        with open('settings.json', 'r') as sets:
+            self.ori_set = json.load(sets)
+            try:
+                self.ori_set['mail_open'] = self.open_email_mode
+            except AttributeError:
+                self.ori_set['mail_open'] = 1  # 默认纯文本
+            try:
+                self.ori_set['lang'] = self.lan
+            except:
+                self.ori_set['lang'] = 'Chinese'
 
-settings().choose_set()

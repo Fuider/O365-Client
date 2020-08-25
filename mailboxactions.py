@@ -21,9 +21,11 @@
 from O365 import Account
 import os
 import re
+from jsonsettings import settings
 
 credentials = ('e089ce98-73af-46f6-8312-0501536effcb', )
 account = Account(credentials, auth_flow_type='public')
+sets = settings()
 
 
 class MailboxActions:
@@ -31,7 +33,7 @@ class MailboxActions:
 
     """The actions in mailbox"""
     def __init__(self):
-
+        self.check_open_mode()
         self.account = account
         self.credentials = credentials
         self.scopes = ['basic', 'message_all', 'calendar_all']  # 请求权限
@@ -42,19 +44,20 @@ class MailboxActions:
             # request to login
             self.account.authenticate(scopes=self.scopes)
 
+
     def read_email(self):
         
 
         mailbox = self.account.mailbox()
         global readbox
         print('''
-        Which email folder do you want to get into?
-        1.Inbox
-        2.Sent emails
-        3.Spam folder
-        4.Deleted emails\n
+        你要进入哪个文件夹?
+        1.收件箱
+        2.已发送
+        3.垃圾邮件
+        4.已删除\n
         ''')  # choose which mailbox to get into
-        readbox = input('Please enter the number.')
+        readbox = input('请输入数字')
 
         if readbox == '1':
             readbox = mailbox.inbox_folder()
@@ -74,9 +77,14 @@ class MailboxActions:
         will_read_sub = input('请输入要阅读的邮件的主题。\n')
         for messages in readbox.get_messages(limit=75, batch=20):
             if messages.subject == will_read_sub:
-                print(messages.subject)
-                print('\n----------------------------\n')
-                print(messages.body)
+                if self.mow == '1':
+                    print(messages.subject)
+                    print('\n----------------------------\n')
+                    print(messages.body)
+                elif self.mow == '2':
+                    fn = messages.subject+'.html'
+                    with open(fn,'w') as eml:
+                        eml.write(messages.body)
 
     def send_email(self):
         """send the email with the function 'get_full_mail_info' """
@@ -104,3 +112,9 @@ class MailboxActions:
         to_who = result1
         subj = input('\nPlease enter the subject: \n')
         text = input('\nPlease enter the body: \n')
+    
+    def check_open_mode(self):
+        if sets.mail_open == '1':
+            self.mow = '1'
+        elif sets.mail_open == '2':
+            self.mow = '2'

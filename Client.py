@@ -23,11 +23,12 @@ from mailboxactions import MailboxActions
 from events import Read
 from enlib.enClient import En_Start
 from support import Support
-from settings import Setlang
+from jsonsettings import *
 import os
 
 mail = MailboxActions()
 calendar = Read()
+sets = settings()
 
 class Start:
     """这里是应用入口"""
@@ -38,12 +39,12 @@ class Start:
 
     def mail_or_calendar(self):
         mail.check_if_authenticated()
-        self.choice = input('进入邮箱还是日历？(E/C) 您也可以向我们反馈。(S)')
+        self.choice = input('进入邮箱还是日历？(E/C) 您也可以向我们反馈。(S)或进入设置(O)')
         if self.choice == 'E':
-            self.choice = input('Do you want to read an email (R) or write an email (W)?')
+            self.choice = input('读邮件(R)还是写邮件(W)?')
             if self.choice == 'R':
                 mail.read_email()
-                self.choice = input('Do you want to read the body of the email?')
+                self.choice = input('要读正文吗?(Y/N)')
                 if self.choice == 'Y':
                     print('\n')
                     mail.get_body()
@@ -62,6 +63,8 @@ class Start:
             os.system("pause")
         elif self.choice == 'S':
             Support().support()
+        elif self.choice == 'O':
+            sets.choose_set()
         else:
             Start().mail_or_calendar()
             os.system("pause")
@@ -71,18 +74,10 @@ class Languagecheck:
     """这里用于检测语言"""
 
     def lang_chck(self):
-
-        lang_exists = os.path.isfile("lang")
-        if lang_exists == True:
-            f1 = open('lang', encoding='utf-8', mode='r')
-            msg = f1.read()
-            if msg == '1':
-                Start().mail_or_calendar()
-            elif msg == '2':
-                En_Start().mail_or_calendar()
+        if sets.lang != 'Chinese':
+            En_Start().mail_or_calendar()
         else:
-            print("请设置你的语言,然后重启应用。Please set your language, then restart the program.")
-            Setlang().set_language()
+            Start().mail_or_calendar()
 
 
 langu = Languagecheck()
