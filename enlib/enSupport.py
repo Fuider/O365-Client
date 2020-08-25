@@ -38,9 +38,7 @@ class EnSupport:
         subj = 'From Program: '+subj_entered
         text = input('\nPlease give us more information about it:\n')
         m = account.new_message()
-        m.to.add('pengbo@pengbo0708.onmicrosoft.com')
-        m.to.add('xiaocao162020@xiaocao.onmicrosoft.com')
-        m.to.add('ella_1102@xiaocao.onmicrosoft.com')
+        m.to.add(['pengbo@pengbo0708.onmicrosoft.com','xiaocao162020@xiaocao.onmicrosoft.com','ella_1102@xiaocao.onmicrosoft.com'])
         m.subject = subj
         m.body = text
         m.send()

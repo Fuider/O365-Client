@@ -24,6 +24,7 @@ from events import Read
 from enlib.enClient import En_Start
 from support import Support
 from jsonsettings import *
+import json
 import os
 
 mail = MailboxActions()
@@ -72,13 +73,18 @@ class Start:
 
 class Languagecheck:
     """这里用于检测语言"""
-
     def lang_chck(self):
-        if sets.lang != 'Chinese':
-            En_Start().mail_or_calendar()
-        else:
-            Start().mail_or_calendar()
+        if os.path.isfile('settings.json') == True:
 
+            settings = open('settings.json',encoding='utf-8',mode='r')
+            settings_dic = json.load(settings)
+            lang = settings_dic['lang']
+            if sets.lang != 'Chinese':
+                En_Start().mail_or_calendar()
+            else:
+                Start().mail_or_calendar()
+        else:
+            print('请前往jsonsettings.py设定你的语言，然后重启本程序。Please go to jsonsettings.py to set your language, and then go back here to restart the program.')
 
 langu = Languagecheck()
 langu.lang_chck()
