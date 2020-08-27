@@ -96,4 +96,3 @@ class settings:
                 self.ori_set['lang'] = self.lan
             except:
                 self.ori_set['lang'] = 'Chinese'
-

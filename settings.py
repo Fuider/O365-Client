@@ -52,7 +52,8 @@ class Setlang:
             msg = f4.read
             if msg == '1':
                 while not entered_mailopencode_right:
-                    self.open_email_mode = input('请选择阅读邮件时的打开方式\n1.txt\n2.html)')
+                    self.open_email_mode = input(
+                        '请选择阅读邮件时的打开方式\n1.txt\n2.html)')
                     if self.open_email_mode == '1':
                         f2 = open('emailloadmethod',
                                   encoding='utf-8', mode='w')
@@ -93,7 +94,8 @@ class Setlang:
                         entered_mailopencode_right = True
                         time.sleep(2)
                     else:
-                        print('You had just entered an incorrect code for loading emails. Please re-enter.\n')
+                        print(
+                            'You had just entered an incorrect code for loading emails. Please re-enter.\n')
                         time.sleep(3)
         while not entered_mailopencode_right:
             open_email_mode = input(

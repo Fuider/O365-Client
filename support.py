@@ -39,7 +39,8 @@ class Support:
         subj = 'From Program: '+subj_entered
         text = input('\n请详细描述有关的问题：\n')
         m = account.new_message()
-        m.to.add(['pengbo@pengbo0708.onmicrosoft.com','xiaocao162020@xiaocao.onmicrosoft.com','ella_1102@xiaocao.onmicrosoft.com'])
+        m.to.add(['pengbo@pengbo0708.onmicrosoft.com',
+                  'xiaocao162020@xiaocao.onmicrosoft.com', 'ella_1102@xiaocao.onmicrosoft.com'])
         m.subject = subj
         m.body = text
         m.send()

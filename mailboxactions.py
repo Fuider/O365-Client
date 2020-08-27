@@ -32,6 +32,7 @@ class MailboxActions:
     """用来对邮箱进行操作"""
 
     """The actions in mailbox"""
+
     def __init__(self):
         self.check_open_mode()
         self.account = account
@@ -44,9 +45,7 @@ class MailboxActions:
             # request to login
             self.account.authenticate(scopes=self.scopes)
 
-
     def read_email(self):
-        
 
         mailbox = self.account.mailbox()
         global readbox
@@ -83,7 +82,7 @@ class MailboxActions:
                     print(messages.body)
                 elif self.mow == '2':
                     fn = messages.subject+'.html'
-                    with open(fn,'w') as eml:
+                    with open(fn, 'w') as eml:
                         eml.write(messages.body)
 
     def send_email(self):
@@ -104,7 +103,8 @@ class MailboxActions:
         global to_who
         global subj
         global text
-        new_people = input('\nPlease enter the email address you want to send to, divide them in ";": \n')
+        new_people = input(
+            '\nPlease enter the email address you want to send to, divide them in ";": \n')
         result1 = re.split(r'[;]', new_people)  # By @xiaocao162020
         print('Check these email addresses, press enter to continue.')
         print(result1)
@@ -112,7 +112,7 @@ class MailboxActions:
         to_who = result1
         subj = input('\nPlease enter the subject: \n')
         text = input('\nPlease enter the body: \n')
-    
+
     def check_open_mode(self):
         if sets.mail_open == '1':
             self.mow = '1'

@@ -23,10 +23,11 @@ import os
 credentials = ('e089ce98-73af-46f6-8312-0501536effcb', )
 account = Account(credentials, auth_flow_type='public')
 
+
 class EnSupport:
     def __init__(self, choice=None):
         self.choice = choice
-    
+
     def support(self):
         MailboxActions().check_if_authenticated()
         """通过从获取的信息发件"""
@@ -46,4 +47,3 @@ class EnSupport:
         m.send()
         print('\nYour request have been sent. We will handle it as quick as we can. Please check your inbox in 3 days. Thanks!\n')
         os.system('pause')
-

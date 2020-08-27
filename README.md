@@ -1,5 +1,9 @@
 # O365-Client
 
+# 分支说明
+
+主分支的代码风格不好，而且有 bug，所以准备在这个分支里面重新写一下。
+
 **[English](https://github.com/Fuider/O365-Client/blob/master/enREADME.md)**
 
 本程序真实维护人,主要人员:Micraow, xiaocao162020, ella
@@ -40,7 +44,7 @@ Bug 已解决，但相关方法尚未集成。
 
 1. pip install O365
 2. 准备一个微软账号 [注册](https://account.microsoft.com/account?lang=zh-cn) ，事实上我更推荐含 Office 365(现更名为 Microsoft 365)的 E5 开发者订阅（我用的就是这个比较靠谱，而且可以支持所有的 API），注册方法请自行百度。
-3. 运行Client.py
+3. 运行 Client.py
 
 ## 关于 office 365 账户
 
@@ -67,7 +71,6 @@ https://blog.curlc.com/archives/599.html
 提醒:onedrive 默认的存储容量为 1 TB，需要将他们手动改为 5 TB，当然，1TB=1024 GB，相当于百度网盘的容量。你如果直连下载 onedrive 的文件的话，速度可能只比百度云快一点点，虽然微软没有对其进行限速，因为 onedrive 的服务器在国外，你可以搭建 oneindex(如果你使用的是自己的应用 ID 和机密，还可以提高续订的概率，因为据说微软时看 API 的调用量判断你的开发是否活跃。使用本程序也可以调用 API，虽然调用的是我的[偷笑]但是你可以换成你的，具体怎么换？我过一段时间回写下来。) 或其他的索引，或者一些在线的工具获取下载直链，然后通过 idm 多线程下载速度很快。
 具体如何更改 onedrive 的容量，请看这篇文章。
 https://blog.curlc.com/archives/66.html
-
 
 ## 优点
 

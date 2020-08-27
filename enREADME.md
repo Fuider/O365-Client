@@ -2,6 +2,10 @@
 
 \*\*[简体中文(Chinese Simplefied)](https://github.com/Fuider/O365-Client)
 
+# Branch Note
+
+There are too much bags on master branch and it is hard to fix .So we plan to refactor it.
+
 The main authors of this program: Micraow, xiaocao162020, ella.
 
 Please read the full document and code of the [python-O365](https://github.com/O365/python-o365) program before you contribute with the program.

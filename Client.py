@@ -30,10 +30,12 @@ mail = MailboxActions()
 calendar = Read()
 sets = settings()
 
+
 class Start:
     """这里是应用入口"""
 
     """The start of the app."""
+
     def __init__(self, choice=None):
         self.choice = choice
 
