@@ -2,6 +2,8 @@
 
 **[English](https://github.com/Fuider/O365-Client/blob/master/enREADME.md)**
 
+这个分支还有bug, 我们大约还会在修复半年左右。再往后，我们将不再维护这个分支，我们将在Fix分支上面重构它。
+
 本程序真实维护人,主要人员:Micraow, xiaocao162020, ella
 
 在为本项目做出贡献前，请仔细阅读 python-o365 项目的文档，及全部代码 [传送门](https://github.com/O365/python-o365)
