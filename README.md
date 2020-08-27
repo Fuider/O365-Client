@@ -1,6 +1,6 @@
 # O365-Client
 
-**[English](https://github.com/Fuider/O365-Client/blob/master/enREADME.md)**
+这个分支将不会很快翻译成英文，因为正在开发。  This branch won't be translated in a short time, because we are still developing.
 
 这个分支还有bug, 我们大约还会在修复半年左右。再往后，我们将不再维护这个分支，我们将在Fix分支上面重构它。
 
