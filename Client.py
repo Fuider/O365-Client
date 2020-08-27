@@ -21,7 +21,6 @@
 
 from mailboxactions import MailboxActions
 from events import Read
-from enlib.enClient import En_Start
 from support import Support
 from jsonsettings import *
 import os
@@ -49,7 +48,9 @@ class Start:
                 self.choice = input('要读正文吗?(Y/N)')
                 if self.choice == 'Y':
                     print('\n')
-                    mail.get_body()
+                    sub = input('请输入主题')
+                    mail.get_body(sub)
+                    print(mail.filtered_messages)
                     os.system('pause')
                 else:
                     os.system('pause')
@@ -71,16 +72,4 @@ class Start:
             Start().mail_or_calendar()
             os.system("pause")
 
-
-class Languagecheck:
-    """这里用于检测语言"""
-
-    def lang_chck(self):
-        if sets.lang != 'Chinese':
-            En_Start().mail_or_calendar()
-        else:
-            Start().mail_or_calendar()
-
-
-langu = Languagecheck()
-langu.lang_chck()
+Start().mail_or_calendar()

@@ -31,10 +31,9 @@ sets = settings()
 class MailboxActions:
     """用来对邮箱进行操作"""
 
-    """The actions in mailbox"""
+    """The actions in self.mailbox"""
 
     def __init__(self):
-        self.check_open_mode()
         self.account = account
         self.credentials = credentials
         self.scopes = ['basic', 'message_all', 'calendar_all']  # 请求权限
@@ -47,7 +46,7 @@ class MailboxActions:
 
     def read_email(self):
 
-        mailbox = self.account.mailbox()
+        self.mailbox = self.account.mailbox()
         global readbox
         print('''
         你要进入哪个文件夹?
@@ -55,35 +54,26 @@ class MailboxActions:
         2.已发送
         3.垃圾邮件
         4.已删除\n
-        ''')  # choose which mailbox to get into
+        ''')  # choose which self.mailbox to get into
         readbox = input('请输入数字')
 
         if readbox == '1':
-            readbox = mailbox.inbox_folder()
+            readbox = self.mailbox.inbox_folder()
         elif readbox == '2':
-            readbox = mailbox.sent_folder()
+            readbox = self.mailbox.sent_folder()
         elif readbox == '3':
-            readbox = mailbox.junk_folder()
+            readbox = self.mailbox.junk_folder()
         else:
-            readbox = mailbox.deleted_folder()
+            readbox = self.mailbox.deleted_folder()
         for messages in readbox.get_messages(limit=75, batch=20):
             print(messages)
         os.system('pause')
 
-    def get_body(self):
+    def get_body(self,sub):
         """获取邮件正文，通过----------分割同主题的不同邮件，但是现在获取HTML邮件正文会打印源码"""
-        global readbox
-        will_read_sub = input('请输入要阅读的邮件的主题。\n')
-        for messages in readbox.get_messages(limit=75, batch=20):
-            if messages.subject == will_read_sub:
-                if self.mow == '1':
-                    print(messages.subject)
-                    print('\n----------------------------\n')
-                    print(messages.body)
-                elif self.mow == '2':
-                    fn = messages.subject+'.html'
-                    with open(fn, 'w') as eml:
-                        eml.write(messages.body)
+        query = self.mailbox.new_query()
+        query = query.on_attribute(sub)
+        self.filtered_messages = self.mailbox.get_messages(query=query)
 
     def send_email(self):
         """send the email with the function 'get_full_mail_info' """
@@ -95,7 +85,7 @@ class MailboxActions:
         m.subject = subj
         m.body = text
         m.send()
-        print('\nEmail successfully sent. \n')
+        print('\n邮件发送成功! \n')
         os.system('pause')
 
     def get_full_mail_info(self):
@@ -104,17 +94,12 @@ class MailboxActions:
         global subj
         global text
         new_people = input(
-            '\nPlease enter the email address you want to send to, divide them in ";": \n')
+            '\n请输入收件人地址，以分号隔开。\n')
         result1 = re.split(r'[;]', new_people)  # By @xiaocao162020
-        print('Check these email addresses, press enter to continue.')
+        print('请检查收件人地址，按回车以继续')
         print(result1)
         os.system('pause')
         to_who = result1
-        subj = input('\nPlease enter the subject: \n')
-        text = input('\nPlease enter the body: \n')
+        subj = input('\n请输入主题：\n')
+        text = input('\n请输入正文，以回车键结束：\n')
 
-    def check_open_mode(self):
-        if sets.mail_open == '1':
-            self.mow = '1'
-        elif sets.mail_open == '2':
-            self.mow = '2'
