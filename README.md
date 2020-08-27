@@ -2,6 +2,8 @@
 
 # 分支说明
 
+这个分支将不会很快翻译成英文，因为正在开发。  This branch won't be translated in a short time, because we are still developing.
+
 主分支的代码风格不好，而且有 bug，所以准备在这个分支里面重新写一下。
 
 **[English](https://github.com/Fuider/O365-Client/blob/master/enREADME.md)**
