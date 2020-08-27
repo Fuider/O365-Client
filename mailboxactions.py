@@ -74,6 +74,8 @@ class MailboxActions:
         query = self.mailbox.new_query()
         query = query.on_attribute(sub)
         self.filtered_messages = self.mailbox.get_messages(query=query)
+        for self.msg in self.filtered_messages:
+            return self.msg.body
 
     def send_email(self):
         """send the email with the function 'get_full_mail_info' """

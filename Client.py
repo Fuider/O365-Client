@@ -50,7 +50,7 @@ class Start:
                     print('\n')
                     sub = input('请输入主题')
                     mail.get_body(sub)
-                    print(mail.filtered_messages)
+                    print(mail.get_body(sub))
                     os.system('pause')
                 else:
                     os.system('pause')
