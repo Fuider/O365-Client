@@ -1,6 +1,7 @@
 # O365-Client
 
-![GitHub All Releases](https://img.shields.io/github/downloads/Fuider/O365-Client/total?label=release%20downloads&logo=Github&style=flat-square) !(Telegram Group)[https://img.shields.io/badge/dynamic/json?color=blue&label=Telegram%20Group&query=%24.data.totalSubs&url=https%3A%2F%2Fapi.spencerwoo.com%2Fsubstats%2F%3Fsource%3Dtelegram%26queryKey%3Dfuider]
+![GitHub All Releases](https://img.shields.io/github/downloads/Fuider/O365-Client/total?label=release%20downloads&logo=Github&style=flat-square) 
+![Telegram Group](https://img.shields.io/badge/dynamic/json?color=blue&label=Telegram%20Group&query=%24.data.totalSubs&url=https%3A%2F%2Fapi.spencerwoo.com%2Fsubstats%2F%3Fsource%3Dtelegram%26queryKey%3Dfuider)
 
 这个分支将不会很快翻译成英文，因为正在开发。  This branch won't be translated in a short time, because we are still developing.
 
