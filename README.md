@@ -7,7 +7,9 @@
 
 这个分支还有bug, 我们大约还会在修复半年左右。再往后，我们将不再维护这个分支，我们将在Fix分支上面重构它。
 
-本程序真实维护人,主要人员:Micraow, xiaocao162020, ella
+本程序真实维护人,主要人员:Micraow
+![GitHub followers](https://img.shields.io/github/followers/micraow?color=red&label=My%20followers&logo=Github&logoColor=blue&style=flat-square)
+, xiaocao162020, ella
 
 在为本项目做出贡献前，请仔细阅读 python-o365 项目的文档，及全部代码 [传送门](https://github.com/O365/python-o365)
 
@@ -15,7 +17,7 @@
 
 用 Python 编写的代码示例，与 O365 连接并查阅邮件，查看日历等。我们的梦想是尽可能多的集成 API。
 
-欢迎大家前往[Microsoft Graph 项目](https://github.com/Fuider/MSGraph-Client)！
+~~欢迎大家前往[Microsoft Graph 项目](https://github.com/Fuider/MSGraph-Client)！~~
 
 # 联系
 
