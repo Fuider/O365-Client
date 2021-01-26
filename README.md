@@ -3,7 +3,7 @@
 ![GitHub All Releases](https://img.shields.io/github/downloads/Fuider/O365-Client/total?label=release%20downloads&logo=Github&style=flat-square) 
 ![Telegram Group](https://img.shields.io/badge/dynamic/json?color=blue&label=Telegram%20Group&query=%24.data.totalSubs&url=https%3A%2F%2Fapi.spencerwoo.com%2Fsubstats%2F%3Fsource%3Dtelegram%26queryKey%3Dfuider)
 
-这个分支将不会很快翻译成英文，因为正在开发。  This branch won't be translated in a short time, because we are still developing.
+这个分支将不会很快翻译成英文，因为正在开发。  **This branch won't be translated in a short time, because we are still developing.**
 
 这个分支还有bug, 我们大约还会在修复半年左右。再往后，我们将不再维护这个分支，我们将在Fix分支上面重构它。
 
@@ -59,9 +59,9 @@ Bug 已解决，但相关方法尚未集成。
 2. 按下"立即加入"，或"了解更多信息"，接下来你需要登录你注册的免费的微软账号。
    ![图片](https://share.pengbo.workers.dev/1595596248544.jpg)
 
-3. We are a group of students who love Information Technology, NOT oen of the Official groups of Microsoft.😂
+3. 我们是一群热爱python的学生，非Microsoft官方。😂
 
-5.然后你添加完之后就能拿到一个有 25 位用户许可证的 E5 订阅，包含了全套的 office 套件，可用来正版激活软件，就不用熊那些么盗版的激活工具了，只要登录你的账号就可以激活办公软件了，不止支持软件的激活，这个订阅还包括了每个用户都有 5 TB 的云存储空间，还有你可以给他们分配邮箱。我的做法是给我的朋友们分配了这些邮箱，然后我便可以与他们联系。
+4.然后你添加完之后就能拿到一个有 25 位用户许可证的 E5 订阅，包含了全套的 office 套件，可用来正版激活软件，就不用熊那些么盗版的激活工具了，只要登录你的账号就可以激活办公软件了，不止支持软件的激活，这个订阅还包括了每个用户都有 5 TB 的云存储空间，还有你可以给他们分配邮箱。我的做法是给我的朋友们分配了这些邮箱，然后我便可以与他们联系。
 [Office 网页版](https://office.com)
 [管理员网站](https://admin.microsoft.com)
 如果想要正常使用所有功能，需要在管理员网站中为你的主账户，就是默认生成的那个账户，也就是管理员账户分配一个许可证(E5)
